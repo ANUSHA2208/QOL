@@ -7,8 +7,11 @@ export const Login = () => {
 
   const container = useRef(null);
   const [isContain,setIsContain] = useState(false);
+  const [email,setEmail] = useState("");
+  const [password,setPassword] = useState("");
+  const [name,setName]=useState("");
 
-  const handleClick = () => {
+  const handleClick2 = () => {
 
     if(!isContain){
       container.current.classList.add("sign-up-mode");
@@ -18,6 +21,33 @@ export const Login = () => {
       container.current.classList.remove("sign-up-mode");
     }
   }
+
+  const handleClick = async() => {
+    // console.log(email,password)
+    let result = await fetch("http://localhost:8000/api/v1/login",{
+      method:"post",
+      body:JSON.stringify({email,password}),
+      headers:{
+        "Content-Type":"application/json"
+      }
+    })
+    result= await result.json()
+    console.log(result)
+  }
+
+  const handleSignUp = async() => {
+    // console.log(email,password)
+    let result = await fetch("http://localhost:8000/api/v1/signup",{
+      method:"post",
+      body:JSON.stringify({name,email,password}),
+      headers:{
+        "Content-Type":"application/json"
+      }
+    })
+    result= await result.json()
+    console.log(result)
+  }
+
   return (
     <div className="container" ref={container}>
   <div className="forms-container">
@@ -26,14 +56,17 @@ export const Login = () => {
         <h2 className="title">Sign in</h2>
         <div className="input-field">
           <i className="fas fa-user" />
-          <input type="text" placeholder="Username" />
+          <input type="text" placeholder="Email" 
+          onChange={(e)=>setEmail(e.target.value)} value={email} />
         </div>
         <div className="input-field">
           <i className="fas fa-lock" />
-          <input type="password" placeholder="Password" />
+          <input type="password" placeholder="Password" 
+          onChange={(e)=>setPassword(e.target.value)} value={password} />
+          
         </div>
         <button className="button-81" role="button">
-          <Link to="/signin">Login</Link>
+          <Link to="/signin" onClick={handleClick}>Login</Link>
         </button>
         <p className="social-text">Or Sign in with social platforms</p>
         <div className="social-media">
@@ -55,19 +88,24 @@ export const Login = () => {
         <h2 className="title">Sign up</h2>
         <div className="input-field">
           <i className="fas fa-user" />
-          <input type="text" placeholder="Username" />
+          <input type="text" placeholder="Username" 
+          onChange={(e)=>setName(e.target.value)} value={name}/>
         </div>
         <div className="input-field">
           <i className="fas fa-envelope" />
-          <input type="email" placeholder="Email" />
+          <input type="email" placeholder="Email" 
+          onChange={(e)=>setEmail(e.target.value)} value={email}/>
         </div>
         <div className="input-field">
           <i className="fas fa-lock" />
-          <input type="password" placeholder="Password" />
+          <input type="password" placeholder="Password" 
+           onChange={(e)=>setPassword(e.target.value)} value={password}/>
         </div>
       
         <button className="button-81" role="button">
-        <Link to="/signin">Sign up</Link>
+        
+        <Link to="/sigup" onClick={handleSignUp}>Sign up</Link>
+
         </button>
         <p className="social-text">Or Sign up with social platforms</p>
         <div className="social-media">
@@ -95,10 +133,11 @@ export const Login = () => {
         <button
           className="btn transparent"
           id="sign-up-btn"
-          style={{ color: "#fff", cursor: "pointer" }} onClick={() => {
-            setIsContain(prev => !prev);
-            return handleClick();
-          }}
+          style={{ color: "#fff", cursor: "pointer" }} onClick={() =>{
+          setIsContain(!isContain);
+            
+            handleClick2()}
+        }
         >
           Sign up
         </button>
@@ -113,10 +152,7 @@ export const Login = () => {
           className="btn transparent"
           id="sign-in-btn"
           style={{ color: "#fff", cursor: "pointer" }}
-          onClick={() => {
-            setIsContain(prev => !prev);
-            return handleClick();
-          }}>
+          onClick={handleClick2}>
           Sign in
         </button>
       </div>
