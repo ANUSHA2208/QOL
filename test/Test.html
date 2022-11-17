@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take a test</title>
+    <script src="https://kit.fontawesome.com/9524f1886d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Test.css">
+</head>
+<body>
+    <div id="header">
+        <div class="homecontainer"  style="background-color:#eb596e;">
+          <nav>
+              <ul id="slidemenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Test.html">Test</a></li>
+                <li><a href="#contact">Contact</a></li>
+                  <i class="fa-solid fa-xmark" style="color: #000;" id="menu" onclick="closemenu()"></i>
+              </ul>
+              <i class="fa-solid fa-bars" style="color: #000;" id="menu" onclick="openmenu()"></i>
+          </nav>
+        </div>
+
+        <!-- // starts -->
+        
+        <br><br>
+        <div class="center">
+    <div class="qcontainer">
+        <div id="question-container">
+            <div id="question">Question</div>
+        </div>
+                <button onclick="myfunction();"class="btn1"><p class="ans1"></p></button><br>
+                <button onclick="myfunction1();"class="btn2"><p class="ans2"></p></button><br>
+                <button onclick="myfunction2();"class="btn3"><p class="ans3"></p></button><br>
+                <button onclick="myfunction3();"class="btn4"><p class="ans4"></p></button><br>
+                <button onclick="myfunction4();"class="btn5"><p class="ans5"></p></button><br>
+        <div id="result"></div>
+        
+    </div>
+</div>
+    </div>
+    <script src="test.js"></script>
+</body>
+</html>
