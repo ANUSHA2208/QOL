@@ -248,6 +248,8 @@ option5: "An extreme amount"
       answerText3.innerText = question.option3;
       answerText4.innerText = question.option4;
       answerText5.innerText = question.option5;
+      console.log(phr,psr,sr,er);
+
     }
   }
   function showScores()
@@ -290,6 +292,7 @@ option5: "An extreme amount"
       sr = sr + 5;
       else if(currentQuestionIndex<20)
       er = er + 5;
+
       showQuestion(shuffleQuestion[currentQuestionIndex]);   
   }
   
