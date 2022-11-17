@@ -104,7 +104,7 @@ export const Login = () => {
       
         <button className="button-81" role="button">
         
-        <Link to="/sigup" onClick={handleSignUp}>Sign up</Link>
+        <Link to="/signup" onClick={handleSignUp}>Sign up</Link>
 
         </button>
         <p className="social-text">Or Sign up with social platforms</p>

@@ -5,7 +5,7 @@ export const Btn1 = ({signinText,delay}) => {
   return (
     <div className="button">
     <button className="button-48" role="button">
-      <Link to="/sigup">
+      <Link to="/signup">
         <span className="text">{signinText}</span>
       </Link>
     </button>
