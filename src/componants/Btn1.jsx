@@ -11,7 +11,7 @@ export const Btn1 = ({signinText,delay}) => {
     </button>
     <p>OR</p>
     <button className="button-48" role="button">
-      <Link to="">
+      <Link to="/test">
         <span className="text">{delay}</span>
       </Link>
     </button>

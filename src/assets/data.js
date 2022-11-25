@@ -183,16 +183,8 @@ option3: "A moderate amount",
 option4: "Very much",
 option5: "An extreme amount"
 
-},
-{
-question: "21. Have you enough money to meet your needs?",
-option1: "Not at all",
-option2: "A little",
-option3: "A moderate amount",
-option4: "Very much",
-option5: "An extreme amount"
-
 }
+
 
  
 ]

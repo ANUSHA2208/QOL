@@ -33,7 +33,7 @@
           option2: "Very much",
           option3: "A moderate amount",
           option4: "A little",
-          option5: "Not little"
+          option5: "Not at all"
           
       },
       
@@ -43,7 +43,7 @@
           option2: "Very much",
           option3: "A moderate amount",
           option4: "A little",
-          option5: "Not little"
+          option5: "Not at all"
           
       },
       
@@ -163,7 +163,7 @@
     option2: "Very much",
     option3: "A moderate amount",
     option4: "A little",
-    option5: "Not little"
+    option5: "Not at all"
     
 },
 

@@ -5,6 +5,7 @@ import Nav from '../componants/Nav'
 export const About = () => {
   return (
     <div>
+    <Nav/>
   <div className="about">
     <h3>About Quality Of Life</h3>
   </div>

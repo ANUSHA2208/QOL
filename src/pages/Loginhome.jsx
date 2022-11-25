@@ -7,6 +7,7 @@ import Nav from '../componants/Nav'
 export const Loginhome = () => {
   return (
     <div>
+    <Nav/>
     <Image/>
     <Body/>
     <Btn1 signinText="View History" delay="Take a Test"/>

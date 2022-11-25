@@ -2,6 +2,14 @@ import React, { useRef, useState } from 'react'
 import signin from '../assets/login.png'
 import signup from '../assets/signup.png'
 import { Link } from 'react-router-dom'
+import { FaFacebookF } from 'react-icons/fa'
+import {BsTwitter} from 'react-icons/bs'
+import {AiOutlineGoogle} from 'react-icons/ai'
+import {FaLinkedinIn} from 'react-icons/fa'
+import {FaUser} from 'react-icons/fa'
+import {HiOutlineMail} from 'react-icons/hi'
+import {FaLock} from 'react-icons/fa'
+import '../pages/style.css'
 
 export const Login = () => {
 
@@ -55,14 +63,14 @@ export const Login = () => {
       <form action="#" className="sign-in-form">
         <h2 className="title">Sign in</h2>
         <div className="input-field">
-          <i className="fas fa-user" />
+          <HiOutlineMail className='fa'/>
           <input type="text" placeholder="Email" 
-          onChange={(e)=>setEmail(e.target.value)} value={email} />
+          onChange={(e)=>setEmail(e.target.value)} value={email} required/>
         </div>
         <div className="input-field">
-          <i className="fas fa-lock" />
+          <FaLock className='fa'/>
           <input type="password" placeholder="Password" 
-          onChange={(e)=>setPassword(e.target.value)} value={password} />
+          onChange={(e)=>setPassword(e.target.value)} value={password} required />
           
         </div>
         <button className="button-81" role="button">
@@ -70,56 +78,56 @@ export const Login = () => {
         </button>
         <p className="social-text">Or Sign in with social platforms</p>
         <div className="social-media">
-          <a href="#" className="social-icon">
-            <i className="fab fa-facebook-f" />
+        <a href="#" className="social-icon">
+            <FaFacebookF className="fab fa-facebook-f" />
           </a>
           <a href="#" className="social-icon">
-            <i className="fab fa-twitter" />
+            <BsTwitter className="fab fa-twitter" />
           </a>
           <a href="#" className="social-icon">
-            <i className="fab fa-google" />
+            <AiOutlineGoogle className="fab fa-google" />
           </a>
           <a href="#" className="social-icon">
-            <i className="fab fa-linkedin-in" />
+            <FaLinkedinIn className="fab fa-linkedin-in" />
           </a>
         </div>
       </form>
       <form action="#" className="sign-up-form">
         <h2 className="title">Sign up</h2>
         <div className="input-field">
-          <i className="fas fa-user" />
+          <FaUser className='fa'/>
           <input type="text" placeholder="Username" 
           onChange={(e)=>setName(e.target.value)} value={name}/>
         </div>
         <div className="input-field">
-          <i className="fas fa-envelope" />
+          <HiOutlineMail className='fa'/>
           <input type="email" placeholder="Email" 
           onChange={(e)=>setEmail(e.target.value)} value={email}/>
         </div>
         <div className="input-field">
-          <i className="fas fa-lock" />
+          <FaLock className='fa'/>
           <input type="password" placeholder="Password" 
            onChange={(e)=>setPassword(e.target.value)} value={password}/>
         </div>
       
         <button className="button-81" role="button">
         
-        <Link to="/signup" onClick={handleSignUp}>Sign up</Link>
+        <Link to="/signin" onClick={handleSignUp}>Sign up</Link>
 
         </button>
         <p className="social-text">Or Sign up with social platforms</p>
         <div className="social-media">
-          <a href="#" className="social-icon">
-            <i className="fab fa-facebook-f" />
+        <a href="#" className="social-icon">
+            <FaFacebookF className="fab fa-facebook-f" />
           </a>
           <a href="#" className="social-icon">
-            <i className="fab fa-twitter" />
+            <BsTwitter className="fab fa-twitter" />
           </a>
           <a href="#" className="social-icon">
-            <i className="fab fa-google" />
+            <AiOutlineGoogle className="fab fa-google" />
           </a>
           <a href="#" className="social-icon">
-            <i className="fab fa-linkedin-in" />
+            <FaLinkedinIn className="fab fa-linkedin-in" />
           </a>
         </div>
       </form>

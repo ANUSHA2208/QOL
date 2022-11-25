@@ -56,6 +56,7 @@ nav ul li a
 nav ul li a:hover
 {
     background-size: 50% 2px;
+    color: #fff;
 }
 
 
@@ -184,6 +185,7 @@ nav ul #menu
 {
    margin-top: 2rem;
    text-align: center;
+  
 }
 
 .button p
@@ -242,6 +244,7 @@ nav ul #menu
   content: "";
   height: 100%;
   left: 0;
+  color: #000;
   position: absolute;
   top: 0;
   transform: translateZ(0);
@@ -256,6 +259,7 @@ nav ul #menu
 
 .button-48:after {
   background-color: #FFFFFF;
+  color: #000;
 }
 
 
@@ -281,8 +285,9 @@ nav ul #menu
 
 
 .container {
-    position: relative;
+    /* position: relative; */
     width: 100%;
+    height: 100%;
     background-color: #fff;
     min-height: 100vh;
     overflow: hidden;
@@ -348,12 +353,13 @@ nav ul #menu
     position: relative;
   }
   
-  .input-field i {
+  .input-field .fa {
     text-align: center;
     line-height: 55px;
     color: #acacac;
     transition: 0.5s;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
+    margin: 12px;
   }
   
   .input-field input {
@@ -400,25 +406,7 @@ nav ul #menu
     color: #4481eb;
     border-color: #4481eb;
   }
-  
-  /* .btn {
-    width: 150px;
-    background-color: #11a711;
-    border: none;
-    outline: none;
-    height: 49px;
-    border-radius: 05px;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin: 15px 0;
-    cursor: pointer;
-    transition: 0.5s;
-  } */
-  
-  /* .btn:hover {
-    background-color: #4d84e2;
-  } */
+
   .panels-container {
     position: absolute;
     height: 100%;
@@ -667,6 +655,12 @@ nav ul #menu
       left: 50%;
     }
   }
+
+  #slidemenu li a
+  {
+    font-size: 24px;
+  }
+
   
 
   
@@ -751,7 +745,7 @@ nav ul #menu
 
   .about h3
   {
-    font-weight: 500;
+    font-weight:600;
   }
   .para img {
       float: left;
@@ -764,11 +758,11 @@ nav ul #menu
       width: 35%;
   }
   .para p{
-      font-size: 16px;
-      font-weight: 400;
+      font-size: 20px;
+      font-weight: 500;
       line-height: 1.55;
       font-family: Open Sans,Roboto,sans-serif!important;
-      margin-left:10px;
+      margin-left:8px;
       margin-top:40px;
   }
 
@@ -814,3 +808,165 @@ nav ul #menu
 
  /*--------------------------------------------------test------------------------------------------------*/ 
 
+
+ .center
+ {
+    width: 60%;
+    /* height: 100%; */
+    margin: auto;
+    margin-top:100px;
+    justify-content: center;
+    align-items: center;
+    background-color: #f6afb9;
+    padding-top: 25px;
+    border-radius:50px;
+    box-shadow: rgba(93, 50, 85, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+ }
+
+ #question
+ {
+  font-size: 24px;
+  font-weight: 600;
+ }
+ 
+ .qcontainer
+ {
+   /* margin-left: 25px; */
+   text-align: center;
+   margin-top: 50px;
+   height: 450px;
+ }
+ 
+ .qcontainer .btn1,.btn2,.btn3,.btn4,.btn5
+ {
+   margin-top: 20px;
+   text-align: center;
+   /* border: 0.1px solid rgb(77, 76, 76); */
+   /* border-radius: 20px; */
+   border-radius: 50% 20% / 10% 40%;
+   padding: 10px;
+   width: 60%;
+   height: 50px;
+   border: none;
+   font-size: 18px;
+   background-color: #ffff;
+ }
+ 
+ .qcontainer .btn1:hover
+ {
+   background-color: #f6d4d4;
+   
+ }
+ .qcontainer .btn2:hover
+ {
+   background-color: #f6d4d4;
+ }
+ .qcontainer .btn3:hover
+ {
+   background-color: #f6d4d4;
+ }
+ .qcontainer .btn4:hover
+ {
+   background-color: #f6d4d4;
+ }
+ .qcontainer .btn5:hover
+ {
+   background-color: #f6d4d4;
+ }
+ 
+ 
+ #question
+ {
+   text-align: center;
+   margin-bottom: 25px;
+ }
+ 
+ 
+ 
+ .h4
+ {
+   margin-top: 50px;
+   height: 100px;
+   text-align: center;
+   font-size: 32px;
+ }
+ 
+
+ #score
+ {
+   margin-top: 10px;
+   margin-right: 100px;
+   font-size: 16px;
+   font-weight: 500;
+   float: right;
+ }
+ 
+ #file1,#file2,#file3,#file4
+ {
+   width: 50%;
+   height: 30px;
+   margin: auto;
+   display: flex;
+  
+ }
+ 
+ .box
+ {
+  height: 250px;
+ }
+
+ .num
+ {
+  /* text-align: center; */
+  margin-left: 30rem;
+ }
+ 
+ /* CSS */
+ .button-55 {
+   margin-left:55rem;
+   margin-top:25px;
+   align-self: center;
+   background-color: #fff;
+   background-image: none;
+   background-position: 0 90%;
+   background-repeat: repeat no-repeat;
+   background-size: 4px 3px;
+   border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+   border-style: solid;
+   border-width: 2px;
+   box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+   box-sizing: border-box;
+   color: #41403e;
+   cursor: pointer;
+   display: inline-block;
+   font-family: Neucha, sans-serif;
+   font-size: 1rem;
+   line-height: 23px;
+   outline: none;
+   padding: .75rem;
+   text-decoration: none;
+   transition: all 235ms ease-in-out;
+   border-bottom-left-radius: 15px 255px;
+   border-bottom-right-radius: 225px 15px;
+   border-top-left-radius: 255px 15px;
+   border-top-right-radius: 15px 225px;
+   user-select: none;
+   -webkit-user-select: none;
+   touch-action: manipulation;
+ }
+ 
+ .button-55:hover {
+   box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+   transform: translate3d(0, 2px, 0);
+ }
+ 
+ .button-55:focus {
+   box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+ }
+ 
+ .button-55 a
+ {
+   text-decoration: none;
+   color: #000;
+ }
+ 

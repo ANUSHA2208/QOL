@@ -10,7 +10,7 @@ export const Body = () => {
         <br />
         <h1>Your Quality of life</h1>
       </div>
-      </div>
+  </div>
   
   )
 }
