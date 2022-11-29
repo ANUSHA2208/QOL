@@ -825,8 +825,10 @@ nav ul #menu
 
  #question
  {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 600;
+  margin-left: 3rem;
+  
  }
  
  .qcontainer
@@ -839,7 +841,7 @@ nav ul #menu
  
  .qcontainer .btn1,.btn2,.btn3,.btn4,.btn5
  {
-   margin-top: 20px;
+   margin-top: 18px;
    text-align: center;
    /* border: 0.1px solid rgb(77, 76, 76); */
    /* border-radius: 20px; */
@@ -923,8 +925,8 @@ nav ul #menu
  
  /* CSS */
  .button-55 {
-   margin-left:55rem;
-   margin-top:25px;
+   margin-left:40rem;
+   margin-top:5rem;
    align-self: center;
    background-color: #fff;
    background-image: none;
@@ -970,3 +972,21 @@ nav ul #menu
    color: #000;
  }
  
+/********************tab**********************/
+
+.sug 
+{
+  font-size: 16px;
+}
+
+
+
+
+
+.qimage
+{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  border-radius: 50px;
+}

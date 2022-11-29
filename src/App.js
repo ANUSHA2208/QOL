@@ -5,6 +5,7 @@ import {Login} from './pages/Login';
 import {Loginhome} from './pages/Loginhome';
 import {  Route,Routes } from 'react-router-dom';
 import { Testpg } from './pages/Testpg';
+import Nav from "./componants/Nav"
 
 
 
@@ -12,7 +13,7 @@ function App() {
   return (
     <div className="App">
     <Routes>
-    {/* <Route path='/' element={<Nav/>}/> */}
+    <Route path='/' element={<Nav/>}/>
     <Route path='/home' element={<Home/>} />
     <Route path='/about' element={<About/>} />
     <Route path='/signup' element={<Login/>} />
