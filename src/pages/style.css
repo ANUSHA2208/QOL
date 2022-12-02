@@ -825,10 +825,9 @@ nav ul #menu
 
  #question
  {
-  font-size: 18px;
-  font-weight: 600;
-  margin-left: 3rem;
-  
+  font-size: 22px;
+  font-weight: 700;
+  margin-left: 5rem;  
  }
  
  .qcontainer
@@ -848,7 +847,7 @@ nav ul #menu
    border-radius: 50% 20% / 10% 40%;
    padding: 10px;
    width: 60%;
-   height: 50px;
+   height: 40px;
    border: none;
    font-size: 18px;
    background-color: #ffff;
@@ -985,8 +984,55 @@ nav ul #menu
 
 .qimage
 {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
+  top: 12rem;
+  right: 25rem;
   position: absolute;
-  border-radius: 50px;
+  border-radius: 100px;
 }
+
+
+
+.rbox
+{
+  padding-top:8rem;
+}
+
+.sug
+{
+  width: 90%;
+  margin: auto;
+}
+
+
+.flex-container {
+  display: flex;
+}
+
+.flex-container > div {
+  background-color: #f198a5;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 50px;
+  padding: 100px;
+  border-radius: 20px;
+}
+
+.ph-sug a
+{
+  text-decoration: none;
+  color: #000;
+}
+
+
+.ph-sug a:hover
+{
+  text-decoration: none;
+  color: #000;
+}
+
+
+
+
+

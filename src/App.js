@@ -6,6 +6,7 @@ import {Loginhome} from './pages/Loginhome';
 import {  Route,Routes } from 'react-router-dom';
 import { Testpg } from './pages/Testpg';
 import Nav from "./componants/Nav"
+import {History} from "./pages/History"
 
 
 
@@ -19,6 +20,7 @@ function App() {
     <Route path='/signup' element={<Login/>} />
     <Route path='/signin' element={<Loginhome/>} />
     <Route path='/test' element = {<Testpg/>}/> 
+    <Route path='/history' element={<History/>}/>
      </Routes>
     </div>
   );

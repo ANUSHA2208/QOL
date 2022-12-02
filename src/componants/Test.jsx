@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import '../pages/style.css';
+import work from '../assets/energy.png';
+import '../pages/style.css'
 
 let single=false;
 let sq=0;
@@ -21,6 +23,7 @@ const Test = () => {
   const result1 = () =>{
 
    return  <>
+   <div class="rbox">
         <h4 className='num'>Physical - {(((phr-7-sq)/28)*100).toFixed(2)} </h4>
         <progress id="file1" value={(((phr-sq-7)/28)*100)} max="100">{phr} </progress>
         <h4 className='num'>Mental - {(((psr-6)/24)*100).toFixed(2)} </h4>
@@ -29,6 +32,7 @@ const Test = () => {
         <progress id="file3" value={(((sr-seq)/(seq*4))*100)} max="100">{phr} </progress>
         <h4 className='num'>Environmental - {(((er-8)/32)*100).toFixed(2)} </h4>
         <progress id="file4" value={(((er-8)/32)*100)} max="100">{phr} </progress>
+        </div>
     <br/>
     <br/>
     <br/>
@@ -45,13 +49,31 @@ const Test = () => {
       <Tab eventKey="physical" title="Physical">
       {
            ((((phr-7-sq)/28)*100) > 50) &&
-           (<h5>Your physical health is satisfying
-            Satisfying does not mean perfectly healthy. Although this goal is difficult to achieve, prevention and regular check-ups at the doctor can only contribute to better physical health.</h5>)
+           (<div>
+            <h5>Your physical health is satisfying
+            Satisfying does not mean perfectly healthy. Although this goal is difficult to achieve, prevention and regular check-ups at the doctor can only contribute to better physical health.</h5>
+            </div>
+           )
+          
+        
          }
          {
            ((((phr-7-sq)/28)*100) <= 50) &&
-           (<h5>Your physical health is unsatisfying
-            Whether we are talking about chronic or acute diseases, they affect your quality of life. Your focus should be on diagnosing, healing or keeping it under control as much as possible.</h5>)
+           (<div>
+            <h5>Your physical health is unsatisfying
+            Whether we are talking about chronic or acute diseases, they affect your quality of life. Your focus should be on diagnosing, healing or keeping it under control as much as possible.</h5>
+            <br/>
+            <br/>
+            <h4>Suggestions from Experts</h4>
+            <br/>
+            <div class="flex-container">
+            <div class="ph-sug">
+              <h3><a href='https://www.headtohealth.gov.au/meaningful-life/physical-health/physical-health'>Head to Health</a></h3>
+            </div>
+            <div class="ph-sug"><h3><a href='https://theworldbook.org/physical-health/'>The World Book</a></h3></div>
+            </div>
+
+            </div>)
          }
       </Tab>
       <Tab eventKey="mental" title="Mental">
@@ -62,8 +84,21 @@ const Test = () => {
          }
          {
            ((((psr-6)/24)*100) <= 50) &&
-           (<h5>Your mental health is unsatisfying
-            What's bothering you? Let's have a talk. You don't have to go through all these alone. Whether it's depression, anxiety, stress or burnout, you need to know how they affect you.</h5>)
+           (<div>
+            <h5>Your mental health is unsatisfying
+            What's bothering you? Let's have a talk. You don't have to go through all these alone. Whether it's depression, anxiety, stress or burnout, you need to know how they affect you.</h5>
+            <br/>
+            <br/>
+            <h4>Suggestions from Experts</h4>
+            <br/>
+            <div class="flex-container">
+            <div class="ph-sug">
+              <h3><a href='https://mantracare.org/therapy/self-care/mental-health-tips/'>MantraCare</a></h3>
+            </div>
+            <div class="ph-sug"><h3><a href='https://www.talkspace.com/blog/good-mental-health-12-therapist-approved-tips/'>Talk Space</a></h3></div>
+            </div>
+
+            </div>)
          }
       </Tab>
       <Tab eventKey="social" title="Social">
@@ -74,8 +109,20 @@ const Test = () => {
          }
          {
            ((((sr-seq)/seq*4)*100) <= 50) &&
-           (<h5>Your social relationships are unsatisfying
-            Maybe you are an introvert or you face loneliness. You may find it difficult to communicate with other people because you feel you are not compatible. There can be many reasons why you are not happy with how your relationships in society go. This does not necessarily mean that they are your fault, or that they cannot be improved. Whether it's personal, sexual or professional relationships, it's always good to talk to someone.</h5>)
+           (<div>
+            <h5>Your social relationships are unsatisfying
+            Maybe you are an introvert or you face loneliness. You may find it difficult to communicate with other people because you feel you are not compatible. There can be many reasons why you are not happy with how your relationships in society go. This does not necessarily mean that they are your fault, or that they cannot be improved. Whether it's personal, sexual or professional relationships, it's always good to talk to someone.</h5>
+            <br/>
+            <br/>
+            <h4>Suggestions from Experts</h4>
+            <br/>
+            <div class="flex-container">
+            <div class="ph-sug">
+              <h3><a href='https://www.wikihow.life/Cope-With-an-Unsatisfying-Social-Life'>Wikihow</a></h3>
+            </div>
+            <div class="ph-sug"><h3><a href='https://www.lifehack.org/articles/communication/12-ways-improve-social-skills-and-make-you-sociable-anytime.html'>Life Hack</a></h3></div>
+            </div>
+            </div>)
          }
       </Tab>
       <Tab eventKey="environmental" title="Environmental">
@@ -85,8 +132,20 @@ const Test = () => {
          }
          {
            ((((er-8)/32)*100) <= 50) &&
-           (<h5>You are not satisfied with the environment in which you live.
-            Certain details related to the environment in which you live your life do not satisfy you. What are the things that bother you and why? What can you do to change them? How much do they affect your life?</h5>)
+           (<div>
+            <h5>You are not satisfied with the environment in which you live.
+            Certain details related to the environment in which you live your life do not satisfy you. What are the things that bother you and why? What can you do to change them? How much do they affect your life?</h5>
+            <br/>
+            <br/>
+            <h4>Suggestions from Experts</h4>
+            <br/>
+            <div class="flex-container">
+            <div class="ph-sug">
+              <h3><a href='https://health.ph360.me/shaewellness/how-your-environment-can-make-you-happy/'>ph360Blog</a></h3>
+            </div>
+            {/* <div class="ph-sug"><h3><a href='https://theworldbook.org/physical-health/'>The World Book</a></h3></div> */}
+            </div>
+            </div>)
          }
         </Tab>
     </Tabs>
