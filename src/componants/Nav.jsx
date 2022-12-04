@@ -37,6 +37,9 @@ const [state,setState]=useState(true);
         <li>
           <Link to="/contact">Contact</Link>
         </li>
+        <li>
+          <Link to="/logout">Logout</Link>
+        </li>
        <HiXMark style={{ color: "#000" }} id="menu" onClick={closemenu}/>
       </ul>
       <GiHamburgerMenu style={{ color: "#000" }} id="menu" onClick={openmenu}/>

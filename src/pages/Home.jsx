@@ -1,6 +1,6 @@
 import React from 'react'
 import Body from '../componants/Body'
-import { Btn1 } from '../componants/Btn1'
+import { Btn2 } from '../componants/Btn2'
 import { Image } from '../componants/Image'
 import Nav from '../componants/Nav'
 
@@ -10,7 +10,7 @@ export const Home = (props) => {
     <Nav/>
     <Image/>
     <Body/>
-    <Btn1 signinText="Sign in" delay = "May be later"/>
+    <Btn2 signinText="Sign in" delay = "May be later"/>
     </div>
   )
 }

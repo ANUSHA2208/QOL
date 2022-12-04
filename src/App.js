@@ -18,9 +18,11 @@ function App() {
     <Route path='/home' element={<Home/>} />
     <Route path='/about' element={<About/>} />
     <Route path='/signup' element={<Login/>} />
-    <Route path='/signin' element={<Loginhome/>} />
+    <Route path='/signin' element={<Login/>} />
     <Route path='/test' element = {<Testpg/>}/> 
     <Route path='/history' element={<History/>}/>
+    <Route path='/dashboard' element={<Loginhome/>}/>
+    <Route path='/logout' element={<Login/>}/>
      </Routes>
     </div>
   );

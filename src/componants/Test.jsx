@@ -3,6 +3,7 @@ import { questions } from '../assets/data'
 import { Link } from 'react-router-dom';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
+import axios from "axios";
 import '../pages/style.css';
 import work from '../assets/energy.png';
 import '../pages/style.css'
@@ -17,6 +18,36 @@ const Test = () => {
   const [psr,setPsr]=useState(0);
   const [er,setEr]=useState(0);
   const currentQuestionIndex = useRef(0);
+
+  
+  const getAuth= () => {
+    return localStorage.getItem("AUTH") ? localStorage.getItem("AUTH") : null 
+  }
+  const [auth,setAuth] = useState(getAuth())
+
+  const headers = {
+    'Authorization' : `Bearer ${auth}`
+  }
+
+  function postScores(){
+    axios.post('http://localhost:8000/api/v1/saveHistory',{
+      "physicalScore":phr,
+      "mentalScore":psr,
+      "socialScore":sr,
+      "environmentalScore":er
+    }, {
+      headers: headers
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    console.log(phr,sr)
+  }
+  
+
 
   const isEnded = () => currentQuestionIndex.current === questions.length
 
@@ -209,6 +240,7 @@ const Test = () => {
 
     function Tests(){  
       if(isEnded()){
+        postScores()
        return result1()
       }
       

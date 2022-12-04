@@ -308,8 +308,10 @@ function showScores()
   sr=(((sr-3)/12)*100).toFixed(2);
   er=(((er-8)/32)*100).toFixed(2);
   }
+
+ 
   //result.innerText="physical domain: "+phr+"socical domain: "+sr+"psychological domain: "+psr+"env domain: "+er;
-  let result1=    `
+  let result1= `
   <h4>Quiz Completed</h4>
   <h2 id='score'> Your scored:physical domain: ${phr} socical domain: ${sr} psychological domain: ${psr} env domain: ${er}</h2>
   <br>
@@ -388,7 +390,7 @@ function myfunction1(){
   showQuestion(shuffleQuestion[currentQuestionIndex]); 
 }
 function myfunction(){
-  if(currentQuestionIndex==0)
+  if(currentQuestionIndex===0)
   {
      single=true;
   }
@@ -408,3 +410,5 @@ if(start)
 {
   startQuiz(question);
 }
+
+

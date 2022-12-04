@@ -41,6 +41,8 @@ export const Login = () => {
     })
     result= await result.json()
     console.log(result)
+
+    localStorage.setItem("AUTH",result?.token)
   }
 
   const handleSignUp = async() => {
@@ -74,7 +76,7 @@ export const Login = () => {
           
         </div>
         <button className="button-81" role="button">
-          <Link to="/signin" onClick={handleClick}>Login</Link>
+          <Link to="/dashboard" onClick={handleClick}>Login</Link>
         </button>
         <p className="social-text">Or Sign in with social platforms</p>
         <div className="social-media">
@@ -147,8 +149,9 @@ export const Login = () => {
             handleClick2()}
         }
         >
-          Sign up
+          Sign up 
         </button>
+        
       </div>
       <img src={signin} className="image" alt />
     </div>
