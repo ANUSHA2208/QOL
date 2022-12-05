@@ -5,6 +5,7 @@ import { Image } from '../componants/Image'
 import Nav from '../componants/Nav'
 
 export const Home = (props) => {
+  
   return (
     <div>
     <Nav/>

@@ -11,6 +11,7 @@ import '../pages/style.css'
 let single=false;
 let sq=0;
 let seq=3;
+let cnt=0;
 const Test = () => {
   
   const [phr,setPhr]=useState(0);
@@ -44,7 +45,6 @@ const Test = () => {
     .catch(function (error) {
       console.log(error);
     });
-    console.log(phr,sr)
   }
   
 
@@ -64,6 +64,7 @@ const Test = () => {
         <h4 className='num'>Environmental - {(((er-8)/32)*100).toFixed(2)} </h4>
         <progress id="file4" value={(((er-8)/32)*100)} max="100">{phr} </progress>
         </div>
+        
     <br/>
     <br/>
     <br/>
@@ -85,8 +86,6 @@ const Test = () => {
             Satisfying does not mean perfectly healthy. Although this goal is difficult to achieve, prevention and regular check-ups at the doctor can only contribute to better physical health.</h5>
             </div>
            )
-          
-        
          }
          {
            ((((phr-7-sq)/28)*100) <= 50) &&
@@ -240,7 +239,10 @@ const Test = () => {
 
     function Tests(){  
       if(isEnded()){
-        postScores()
+        cnt++
+        if(cnt<=1){
+          postScores()
+        }
        return result1()
       }
       

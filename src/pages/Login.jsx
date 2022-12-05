@@ -30,7 +30,11 @@ export const Login = () => {
     }
   }
 
-  const handleClick = async() => {
+
+
+  const handleClick = async(event) => {
+    setEmail('');
+    setPassword('');
     // console.log(email,password)
     let result = await fetch("http://localhost:8000/api/v1/login",{
       method:"post",
@@ -41,8 +45,8 @@ export const Login = () => {
     })
     result= await result.json()
     console.log(result)
-
     localStorage.setItem("AUTH",result?.token)
+    
   }
 
   const handleSignUp = async() => {
@@ -56,18 +60,25 @@ export const Login = () => {
     })
     result= await result.json()
     console.log(result)
+    localStorage.setItem("AUTH",result?.token)
+  }
+
+
+  const cancelCourse = () => { 
+    document.getElementsByClassName('sign-in-form')[0].reset();
   }
 
   return (
     <div className="container" ref={container}>
   <div className="forms-container">
     <div className="signin-signup">
-      <form action="#" className="sign-in-form">
+      <form action="#" className="sign-in-form"  >
         <h2 className="title">Sign in</h2>
         <div className="input-field">
           <HiOutlineMail className='fa'/>
           <input type="text" placeholder="Email" 
           onChange={(e)=>setEmail(e.target.value)} value={email} required/>
+          
         </div>
         <div className="input-field">
           <FaLock className='fa'/>
