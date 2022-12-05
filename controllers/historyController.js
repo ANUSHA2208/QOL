@@ -4,6 +4,7 @@ import bigPromise from "../middlewares/bigPromise.js";
 export const saveHistory = bigPromise(async(req,res,next)=>{
     const {physicalScore,mentalScore,socialScore,environmentalScore}=req.body;
     const history = await History.create({
+        userId:req.user._id,
         physicalScore,
         mentalScore,
         socialScore,
@@ -28,7 +29,7 @@ export const saveHistory = bigPromise(async(req,res,next)=>{
 
 
 export const getAllHistory = bigPromise(async(req,res,next)=>{
-    const history = await History.find({}).lean().catch(err=>{
+    const history = await History.find({userId:req.user._id}).lean().catch(err=>{
         console.log(`failed to fetch all  history ${err}`)
         return null
     })

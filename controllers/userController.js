@@ -28,11 +28,12 @@ export const signup = bigPromise(async(req,res,next)=>{
         password:password
     })
     user.password=undefined
-    res.status(200).json({
-        success:true,
-        message:"User added successfully!",
-        user
-    })
+    // res.status(200).json({
+    //     success:true,
+    //     message:"User added successfully!",
+    //     user
+    // })
+    cookieToken(user,res,"User registered sucessfully!")
 })
 
 export const login=bigPromise(async(req,res,next)=>{
@@ -60,15 +61,9 @@ export const login=bigPromise(async(req,res,next)=>{
             message:"Incorrect Password"
         })
     }
+
+    cookieToken(user,res,"LoggedIn sucessfully!")
     
-
-    res.status(200).json({
-        success:true,
-        message:"User logged in successfully!",
-        user
-    })
-
-
 })
 
 export const logout=bigPromise(async(req,res,next)=>{

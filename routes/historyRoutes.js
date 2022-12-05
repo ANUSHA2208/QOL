@@ -7,7 +7,7 @@ import { getAllHistory, saveHistory } from "../controllers/historyController.js"
 import {isLoggedIn,customRole} from "../middlewares/userMiddlewares.js"
 
 router.route("/saveHistory").post(isLoggedIn,saveHistory)
-router.route("/history").post(isLoggedIn ,getAllHistory)
+router.route("/history").get(isLoggedIn ,getAllHistory)
 
 
 
