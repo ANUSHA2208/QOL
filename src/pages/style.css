@@ -902,7 +902,7 @@ nav ul #menu
    float: right;
  }
  
- #file1,#file2,#file3,#file4
+ #file1,#file2,#file3,#file4,#file
  {
    width: 50%;
    height: 30px;
@@ -1033,6 +1033,60 @@ nav ul #menu
 }
 
 
+
+@media only screen and (max-width:650px) and (min-width:300px)
+{
+  .login h3
+  {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  .login h1
+  {
+    font-size: 15px;
+  }
+  .button-48
+  {
+    font-size: 12px;
+  }
+
+  #slidemenu
+  {
+    background-color: #fff;
+    color: #000;
+  }
+
+  #slidemenu a
+  {
+    color: #000;
+  }
+
+  .center
+  {
+    width:400px;
+    border-radius: 0px;
+  }
+  center
+  {
+    font-size: 14px;
+  }
+
+.num {
+  margin-left: 50px;
+  font-size: 14px;
+}
+  #file,#file1,#file2,#file3,#file4
+  {
+    width: 100px;
+  }
+}
+
+
+
+@media only screen and (max-width:300px)
+{
+  
+}
 
 
 

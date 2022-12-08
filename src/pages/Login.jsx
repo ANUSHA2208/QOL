@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import signin from '../assets/login.png'
 import signup from '../assets/signup.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FaFacebookF } from 'react-icons/fa'
 import {BsTwitter} from 'react-icons/bs'
 import {AiOutlineGoogle} from 'react-icons/ai'
@@ -10,6 +10,8 @@ import {FaUser} from 'react-icons/fa'
 import {HiOutlineMail} from 'react-icons/hi'
 import {FaLock} from 'react-icons/fa'
 import '../pages/style.css'
+import axios from 'axios'
+import {toast} from 'react-toastify'
 
 export const Login = () => {
 
@@ -18,6 +20,7 @@ export const Login = () => {
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
   const [name,setName]=useState("");
+  const navigate = useNavigate()
 
   const handleClick2 = () => {
 
@@ -33,19 +36,29 @@ export const Login = () => {
 
 
   const handleClick = async(event) => {
-    setEmail('');
-    setPassword('');
+    if(!email || !password) return toast.error("Email and password required")
     // console.log(email,password)
-    let result = await fetch("http://localhost:8000/api/v1/login",{
+    await axios({
       method:"post",
-      body:JSON.stringify({email,password}),
+      url:"http://localhost:8000/api/v1/login",
+      data:{email:email,password},
       headers:{
         "Content-Type":"application/json"
       }
     })
-    result= await result.json()
-    console.log(result)
-    localStorage.setItem("AUTH",result?.token)
+    .then(async(res)=>{
+      await localStorage.setItem("AUTH",res.token)
+        navigate('/dashboard')
+      console.log(res)
+      toast.success("Logged in successfully")
+     
+    })
+    .catch(err=>{
+      toast.error("Something went wrong")
+    })
+    setEmail('');
+    setPassword('');
+   
     
   }
 
@@ -86,8 +99,8 @@ export const Login = () => {
           onChange={(e)=>setPassword(e.target.value)} value={password} required />
           
         </div>
-        <button className="button-81" role="button">
-          <Link to="/dashboard" onClick={handleClick}>Login</Link>
+        <button className="button-81" role="button" onClick={handleClick}>
+          Login
         </button>
         <p className="social-text">Or Sign in with social platforms</p>
         <div className="social-media">

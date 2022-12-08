@@ -63,6 +63,8 @@ const Test = () => {
         <progress id="file3" value={(((sr-seq)/(seq*4))*100)} max="100">{phr} </progress>
         <h4 className='num'>Environmental - {(((er-8)/32)*100).toFixed(2)} </h4>
         <progress id="file4" value={(((er-8)/32)*100)} max="100">{phr} </progress>
+        <h4 className='num'>Overall - {(((((phr-sq-7)/28)+(((psr-6)/24))+(((sr-seq)/(seq*4)))+(((er-8)/32)))*100)/4).toFixed(2)}</h4>
+        <progress id="file" value={(((((phr-sq-7)/28)+(((psr-6)/24))+(((sr-seq)/(seq*4)))+(((er-8)/32)))*100)/4).toFixed(2)}max="100">{phr}</progress>
         </div>
         
     <br/>
@@ -182,7 +184,7 @@ const Test = () => {
     </div>
 
     <div class="quiz-repeat">
-        <button class="button-55"><Link to="/signin">Take Quiz Again</Link></button>
+        <button class="button-55"><Link to="/dashboard">Take Quiz Again</Link></button>
     </div>
 
     <div className='sugg'>

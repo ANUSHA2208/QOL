@@ -10,6 +10,8 @@ let seq=3;
 
 export const History = () => {
 
+
+
   const getHistory = () =>{
    return localStorage.getItem('history') ? JSON.parse(localStorage.getItem('history')) :[]
   }
