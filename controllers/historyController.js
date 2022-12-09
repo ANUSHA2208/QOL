@@ -1,5 +1,6 @@
 import History from "../models/History.js";
 import bigPromise from "../middlewares/bigPromise.js";
+import { cookieToken, historyToken } from "../utils/cookieToken.js";
 
 export const saveHistory = bigPromise(async(req,res,next)=>{
     const {physicalScore,mentalScore,socialScore,environmentalScore}=req.body;
@@ -21,10 +22,11 @@ export const saveHistory = bigPromise(async(req,res,next)=>{
         })
     }
 
-    return res.status(200).json({
-        success:true,
-        message:"History created !"
-    })
+    historyToken(history,res,"History created !")
+    // return res.status(200).json({
+    //     success:true,
+    //     message:"History created !"
+    // })
 })
 
 
@@ -40,7 +42,7 @@ export const getAllHistory = bigPromise(async(req,res,next)=>{
             message:"No History found 1"
         })
     }
-
+    
     return res.status(200).json({
         success:true,
         message:"Histories found !",
