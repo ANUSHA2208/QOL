@@ -47,7 +47,8 @@ export const Login = () => {
       }
     })
     .then(async(res)=>{
-      await localStorage.setItem("AUTH",res.token)
+      console.log(res);
+      localStorage.setItem("AUTH",res.data.token)
         navigate('/dashboard')
       console.log(res)
       toast.success("Logged in successfully")

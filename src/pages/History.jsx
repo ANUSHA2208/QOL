@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Nav from '../componants/Nav'
 import axios from 'axios';
 import "../pages/style.css"
@@ -9,15 +9,36 @@ let seq=3;
 
 
 export const History = () => {
+  
+  const getAuth= () => {
+    return localStorage.getItem("AUTH") ? localStorage.getItem("AUTH") : null 
+  }
+  const [auth,setAuth] = useState(getAuth())
+  
+  const headers = {
+    'Authorization' : `Bearer ${auth}`
+  }
+  const [history,setHistory]= useState(getAllHistory())
 
-
-
-  const getHistory = () =>{
-   return localStorage.getItem('history') ? JSON.parse(localStorage.getItem('history')) :[]
+  function getAllHistory(){
+    axios.get('http://localhost:8000/api/v1/history', {
+      headers: headers
+    })
+    .then(function (response) {
+     setHistory(response.data.data)
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 
-  const [history,setHistory]= useState(getHistory())
 
+
+  
+
+useEffect(()=>{
+  getAllHistory()
+},[])
 
   return (
     <div>
